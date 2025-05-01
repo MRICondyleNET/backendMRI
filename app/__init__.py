@@ -8,7 +8,7 @@ def create_app():
     app.config.from_object(Config)
     
     # MONGODB
-    client = MongoClient(app.config['MONGODB_URI'])
+    client = MongoClient(app.config['MONGODB_URL'])
     app.db = client[app.config['DBNAME']]
     
     from .routes.auth import auth_
